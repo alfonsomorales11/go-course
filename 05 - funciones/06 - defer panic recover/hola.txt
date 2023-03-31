@@ -1,0 +1,2 @@
+hola desde el archivo hola.txt
+Estamos en el curso de Go

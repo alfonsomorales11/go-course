@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hola mundo</h1>
+    <h3>Usuario : {{ .Name }} </h3>
+    <h3>Edad : {{ .Age }}</h3>
+
+    {{ if not .Activo }}
+        <p>El usuario no está activo</p>
+
+    {{ else }}
+        <p>El usuario está activo</p>
+    {{ end }}
+
+
+    {{ if (and .Activo .Admin )}}
+        <p>Eres administrador</p>
+    {{ end }}
+
+    {{ if gt .Age 22 }}
+        <p>Eres mayor de 22 años</p>
+    {{ end }}
+
+
+    <ul>
+        {{ range .Cursos }}
+            <li>{{ .Name }}</li>
+        {{ end }}
+    </ul>
+
+
+
+    {{ template "header" }}
+
+    {{ template "footer" }}
+
+</body>
+</html>
